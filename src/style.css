@@ -96,3 +96,11 @@ footer {
 .weather-details-row {
   margin: 0;
 }
+
+.unit-button:focus {
+  box-shadow: none;
+}
+
+.unit-button:focus:active {
+  box-shadow: none;
+}
