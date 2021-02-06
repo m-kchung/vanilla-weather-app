@@ -1,3 +1,40 @@
+// functions
+  // Current DateTime
+function formatDate(date) {
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+
+
+  let formattedDate = `${day} ${formathours(date)}`
+  return formattedDate;
+}
+
+// format hours
+function formathours(timestamp) {
+  let date = new Date(timestamp);
+
+  let hour = date.getHours();
+  if (hour < 10) {
+  hour = `0${hour}`
+  }
+  
+  let minute = date.getMinutes();
+  if (minute < 10) {
+    minute = `0${minute}`
+  }
+
+  let formattedhour = `${hour}:${minute}`
+  return formattedhour;
+}
 
 function displayTemp(response) {
   let city = response.data.name;
@@ -17,7 +54,8 @@ function displayTemp(response) {
   document.querySelector("#weather-icon").setAttribute(
     "alt",
     response.data.weather[0].description
-  )
+    )
+    document.querySelector("#current-time").innerHTML = formatDate(new Date());
 
 }
 
