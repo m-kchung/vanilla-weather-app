@@ -88,3 +88,7 @@ footer {
 .col-formatting {
   padding: 1px;
 }
+
+.unit-toggle {
+  text-align: right;
+}
