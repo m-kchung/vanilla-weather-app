@@ -16,7 +16,9 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
+    <script src="src/script.js"></script>
   </head>
   <body>
     <!-- <div class="container"> -->
@@ -24,7 +26,7 @@
       <!-- City information -->
       <div class="row">
         <div class="col-6">
-          <h1>London</h1>
+          <h1><span id="city-heading"></span></h1>
           <h4>Saturday 13:00</h4>
         </div>
         <div class="col-6 unit-toggle">
@@ -36,27 +38,24 @@
       </div>
       <!-- Today's Weather -->
       <div class="weather-today">
-        <img
-          src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-          alt="cloudy"
-        />
+        <img src="" id="weather-icon" />
 
-        <h1>7ºC</h1>
-        <h3>Broken Clouds</h3>
+        <h1><span id="temperature"></span>ºC</h1>
+        <h3><span id="weather-main"></span></h3>
       </div>
       <!-- Today's weather detail -->
       <div class="weather-details">
         <div class="row weather-details-row">
           <div class="col-4 col-formatting col-border">
-            <h5>3km/h</h5>
+            <h5><span id="wind"></span>km/h</h5>
             <p>Wind</p>
           </div>
           <div class="col-4 col-formatting col-border">
-            <h5>87%</h5>
+            <h5><span id="humidity"></span>%</h5>
             <p>Humidity</p>
           </div>
           <div class="col-4 col-formatting">
-            <h5>7ºC</h5>
+            <h5><span id="feels_like"></span>ºC</h5>
             <p>Feels like</p>
           </div>
         </div>
