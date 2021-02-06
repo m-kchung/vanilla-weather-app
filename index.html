@@ -11,6 +11,11 @@
       integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
@@ -31,18 +36,25 @@
             alt="cloudy"
           />
 
-          <ul>
-            <li>7ºC</li>
-            <li>Broken Clouds</li>
-          </ul>
+          <h1>7ºC</h1>
+          <h3>Broken Clouds</h3>
         </div>
         <!-- Today's weather detail -->
         <div class="weather-details">
-          <ul>
-            <li>Wind: 3km/h</li>
-            <li>Humidity: 87%</li>
-            <li>Feels like: 7ºC</li>
-          </ul>
+          <div class="row">
+            <div class="col-4">
+              <h5>3km/h</h5>
+              Wind
+            </div>
+            <div class="col-4">
+              <h5>87%</h5>
+              Humidity
+            </div>
+            <div class="col-4">
+              <h5>7ºC</h5>
+              Feels like
+            </div>
+          </div>
         </div>
 
         <!-- Next 5 days weather -->
@@ -123,15 +135,16 @@
             </div>
           </div>
         </div>
-
-        <small>
-          <a
-            href="https://github.com/m-kchung/vanilla-weather-app"
-            target="_blank"
-            >Open-source code</a
-          >
-          by Min Chung
-        </small>
+        <footer>
+          <small>
+            <a
+              href="https://github.com/m-kchung/vanilla-weather-app"
+              target="_blank"
+              >Open-source code</a
+            >
+            by Min Chung
+          </small>
+        </footer>
       </div>
     </div>
   </body>

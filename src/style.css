@@ -1,0 +1,58 @@
+body {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 0px;
+}
+
+h3 {
+  font-size: 25px;
+  font-weight: 400;
+}
+
+h4 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+h5 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: 0;
+}
+
+footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.weather-app {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #dadde1;
+  border-radius: 10px;
+}
+
+.weather-today {
+  text-align: center;
+  padding: 15px;
+}
+
+.weather-details {
+  text-align: center;
+  padding: 5px 40px;
+}
+
+.forecast {
+  margin-top: 20px;
+}
