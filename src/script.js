@@ -36,6 +36,23 @@ function formathours(timestamp) {
   return formattedhour;
 }
 
+// Get current Position
+function getCurrentPosition() {
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
+
+// show position
+function showPosition(response) {
+  let latitude = response.coords.latitude
+  let longitude = response.coords.longitude
+  let apiKey = "5a9b3c5051ae04b7172dded8be3de831";
+  let units = "metric";
+  let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
+  let apiUrl = `${apiEndpoint}?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayTemp);
+}
+
+
 // show today's temperature info
 function displayTemp(response) {
   let city = response.data.name;
@@ -149,3 +166,7 @@ fahrenheit.addEventListener("click", convertToFahrenheit);
   // Change to Celsius
 let celsius = document.querySelector("#convert-to-celsius");
 celsius.addEventListener("click", changeToCelsius)
+
+// location based weather
+let currentlocation = document.querySelector("#location-icon");
+currentlocation.addEventListener("click", getCurrentPosition)

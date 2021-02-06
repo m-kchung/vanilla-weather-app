@@ -140,3 +140,7 @@ form {
 .location-icon:hover {
   color: #42444d;
 }
+
+.weather-main:first-letter {
+  text-transform: capitalize;
+}
