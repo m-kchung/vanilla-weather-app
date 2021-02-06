@@ -8,6 +8,12 @@ h1 {
   margin: 0px;
 }
 
+h2 {
+  font-size: 30px;
+  font-weight: 500;
+  margin: 0;
+}
+
 h3 {
   font-size: 25px;
   font-weight: 400;
@@ -34,7 +40,7 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  text-align: 0;
+  text-align: center;
 }
 
 footer {
@@ -42,12 +48,17 @@ footer {
   text-align: center;
 }
 
+/* sections */
 .weather-app {
   max-width: 600px;
   margin: 30px auto;
   padding: 20px;
   border: 1px solid #dadde1;
   border-radius: 10px;
+}
+
+.forecast-section {
+  margin-top: 20px;
 }
 
 .weather-today {
@@ -64,10 +75,16 @@ footer {
 }
 
 .forecast {
-  margin-top: 20px;
+  margin-top: 5px;
+  border: 1px solid #dadde1;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .col-border {
   border-right: 1px solid #dadde1;
-  padding: 0;
+}
+
+.col-formatting {
+  padding: 1px;
 }
