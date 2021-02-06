@@ -28,12 +28,13 @@
       <div class="search-section">
         <span class="search-form">
           <i class="fas fa-search search-icon"></i>
-          <form>
+          <form id="search-form">
             <input
               type="text"
               placeholder="Enter a city"
               autocomplete="off"
               class="search-bar"
+              id="city-name"
             />
           </form>
         </span>
@@ -43,11 +44,11 @@
       </div>
       <!-- City information -->
       <div class="row">
-        <div class="col-6">
+        <div class="col-9">
           <h1><span id="city-heading"></span></h1>
           <h4><span id="current-time"></span></h4>
         </div>
-        <div class="col-6 unit-toggle">
+        <div class="col-3 unit-toggle">
           <div class="btn-group">
             <a
               href="#"

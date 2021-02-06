@@ -75,6 +75,16 @@ function callWeatherApi(city) {
   axios.get(apiUrl).then(displayTemp);
 }
 
+
+// Update city and acll weather API
+function updateCity(event) {
+  event.preventDefault();
+  let cityName = document.querySelector("#city-name").value;
+  if(cityName) {
+    callWeatherApi(cityName);
+  }
+}
+
 // convert the units to Fahrenheit
 function convertToFahrenheit(event) {
   event.preventDefault();
@@ -127,6 +137,10 @@ let feelsLikeTemperature = null;
 
 // call Weather API at the start
 callWeatherApi("London");
+
+// change city 
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", updateCity);
 
 // change to Fahrenheit
 let fahrenheit = document.querySelector("#convert-to-fahrenheit");
