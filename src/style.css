@@ -11,6 +11,7 @@ h1 {
 h3 {
   font-size: 25px;
   font-weight: 400;
+  margin: 0;
 }
 
 h4 {
@@ -21,8 +22,14 @@ h4 {
 h5 {
   font-size: 18px;
   font-weight: 500;
+  margin: 0;
+  line-height: 25px;
 }
 
+p {
+  font-size: 15px;
+  margin: 0;
+}
 ul {
   list-style: none;
   padding: 0;
@@ -50,9 +57,17 @@ footer {
 
 .weather-details {
   text-align: center;
-  padding: 5px 40px;
+  border: 1px solid #dadde1;
+  border-radius: 10px;
+  padding: 15px 0px;
+  margin: 5px 85px;
 }
 
 .forecast {
   margin-top: 20px;
+}
+
+.col-border {
+  border-right: 1px solid #dadde1;
+  padding: 0;
 }
