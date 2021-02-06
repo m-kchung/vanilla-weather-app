@@ -1,12 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla Weather App</title>
-</head>
-<body>
-    
-</body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="weather-app">
+        <!-- City information -->
+        <h1>London</h1>
+        <h4>Saturday 13:00</h4>
+
+        <!-- Today's Weather -->
+        <div class="row">
+          <div class="col-6">
+            <img
+              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+              alt="cloudy"
+            />
+          </div>
+          <div class="col-6">
+            <ul>
+              <li>7ºC</li>
+              <li>Broken Clouds</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Today's weather detail -->
+        <hr />
+        <div class="weather-details">
+          <h2>Details</h2>
+          <ul>
+            <li>Wind: 3km/h</li>
+            <li>Humidity: 87%</li>
+            <li>Feels like: 7ºC</li>
+          </ul>
+        </div>
+
+        <!-- Next 5 days weather -->
+        <div class="forecast">
+          <h2>Forecast</h2>
+          <div class="row">
+            <div class="col-2">
+              <ul>
+                <li>Sun</li>
+                <li>
+                  <img
+                    src="https://ssl.gstatic.com/onebox/weather/48/rain_light.png"
+                    alt="cloudy"
+                  />
+                </li>
+                <li>9ºC</li>
+              </ul>
+            </div>
+            <div class="col-2">
+              <ul>
+                <li>Sun</li>
+                <li>
+                  <img
+                    src="https://ssl.gstatic.com/onebox/weather/48/rain_light.png"
+                    alt="cloudy"
+                  />
+                </li>
+                <li>9ºC</li>
+              </ul>
+            </div>
+            <div class="col-2">
+              <ul>
+                <li>Sun</li>
+                <li>
+                  <img
+                    src="https://ssl.gstatic.com/onebox/weather/48/rain_light.png"
+                    alt="cloudy"
+                  />
+                </li>
+                <li>9ºC</li>
+              </ul>
+            </div>
+            <div class="col-2">
+              <ul>
+                <li>Sun</li>
+                <li>
+                  <img
+                    src="https://ssl.gstatic.com/onebox/weather/48/rain_light.png"
+                    alt="cloudy"
+                  />
+                </li>
+                <li>9ºC</li>
+              </ul>
+            </div>
+            <div class="col-2">
+              <ul>
+                <li>Sun</li>
+                <li>
+                  <img
+                    src="https://ssl.gstatic.com/onebox/weather/48/rain_light.png"
+                    alt="cloudy"
+                  />
+                </li>
+                <li>9ºC</li>
+              </ul>
+            </div>
+            <div class="col-2">
+              <ul>
+                <li>Sun</li>
+                <li>
+                  <img
+                    src="https://ssl.gstatic.com/onebox/weather/48/rain_light.png"
+                    alt="cloudy"
+                  />
+                </li>
+                <li>9ºC</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <small>
+          <a
+            href="https://github.com/m-kchung/vanilla-weather-app"
+            target="_blank"
+            >Open-source code</a
+          >
+          by Min Chung
+        </small>
+      </div>
+    </div>
+  </body>
 </html>
