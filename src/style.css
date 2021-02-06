@@ -92,3 +92,7 @@ footer {
 .unit-toggle {
   text-align: right;
 }
+
+.weather-details-row {
+  margin: 0;
+}
