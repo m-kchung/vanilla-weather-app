@@ -49,6 +49,22 @@ footer {
   text-align: center;
 }
 
+form {
+  display: inline;
+}
+
+ul.forecast-heading {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+li.forecast-menu {
+  display: inline;
+  padding: 0 10px 0 0;
+  color: #42444d;
+  border-radius: 13px;
+  margin: 0;
+}
 /* sections */
 .weather-app {
   max-width: 600px;
@@ -87,7 +103,7 @@ footer {
 }
 
 .col-formatting {
-  padding: 1px;
+  padding: 0px;
 }
 
 .unit-toggle {
@@ -126,10 +142,6 @@ footer {
   width: 60%;
 }
 
-form {
-  display: inline;
-}
-
 .location-icon {
   font-size: 24px;
   color: #787b8a;
@@ -144,14 +156,6 @@ form {
 
 .weather-main:first-letter {
   text-transform: capitalize;
-}
-
-li.forecast-menu {
-  display: inline;
-  padding: 0 10px 0 0;
-  color: #42444d;
-  border-radius: 13px;
-  margin: 0;
 }
 
 .forecast-active {
@@ -183,11 +187,6 @@ li.forecast-menu {
   background-color: #b4b5b9;
 }
 
-ul.forecast-heading {
-  text-align: left;
-  margin-bottom: 10px;
-}
-
 .location-button {
   border: none;
   background-color: white;
@@ -196,4 +195,12 @@ ul.forecast-heading {
 
 .location-button:focus {
   outline: none;
+}
+
+.forecast-icons {
+  width: 70px;
+}
+
+.weather-icon {
+  width: 120px;
 }

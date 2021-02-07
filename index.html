@@ -39,7 +39,7 @@
           </form>
         </span>
         <span class="location-icon">
-          <button class="location-button" id="location-icon"><i class="fas fa-map-marker-alt" ></i
+          <button class="location-button" id="location-icon" type="button"><i class="fas fa-map-marker-alt" ></i
         ></span></button>
       </div>
       <!-- City information -->
@@ -67,7 +67,7 @@
       </div>
       <!-- Today's Weather -->
       <div class="weather-today">
-        <img src="" id="weather-icon" />
+        <img src="" id="weather-icon" class="weather-icon"/>
 
         <h1><span id="temperature"></span><span id="temp-unit">ºC</span></h1>
         <h3 class="weather-main"><span id="weather-main"></span></h3>
@@ -103,67 +103,7 @@
         </ul>
 
         <div class="forecast">
-          <div class="row">
-            <div class="col col-formatting col-border">
-              <ul>
-                <li>Sun</li>
-                <li>
-                  <img
-                    src="https://ssl.gstatic.com/onebox/weather/48/rain_light.png"
-                    alt="cloudy"
-                  />
-                </li>
-                <li>9ºC</li>
-              </ul>
-            </div>
-            <div class="col col-formatting col-border">
-              <ul>
-                <li>Sun</li>
-                <li>
-                  <img
-                    src="https://ssl.gstatic.com/onebox/weather/48/rain_light.png"
-                    alt="cloudy"
-                  />
-                </li>
-                <li>9ºC</li>
-              </ul>
-            </div>
-            <div class="col col-formatting col-border">
-              <ul>
-                <li>Sun</li>
-                <li>
-                  <img
-                    src="https://ssl.gstatic.com/onebox/weather/48/rain_light.png"
-                    alt="cloudy"
-                  />
-                </li>
-                <li>9ºC</li>
-              </ul>
-            </div>
-            <div class="col col-formatting col-border">
-              <ul>
-                <li>Sun</li>
-                <li>
-                  <img
-                    src="https://ssl.gstatic.com/onebox/weather/48/rain_light.png"
-                    alt="cloudy"
-                  />
-                </li>
-                <li>9ºC</li>
-              </ul>
-            </div>
-            <div class="col col-formatting">
-              <ul>
-                <li>Sun</li>
-                <li>
-                  <img
-                    src="https://ssl.gstatic.com/onebox/weather/48/rain_light.png"
-                    alt="cloudy"
-                  />
-                </li>
-                <li>9ºC</li>
-              </ul>
-            </div>
+          <div class="row" id="forecast">            
           </div>
         </div>
       </div>

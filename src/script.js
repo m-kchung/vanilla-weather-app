@@ -81,6 +81,37 @@ function displayTemp(response) {
 
 }
 
+
+// Get forecast
+function displayForecast (response) {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;
+  forecastTemperature= response.data.list
+  
+
+  for (let index = 0; index < 5; index++) {
+    forecast = response.data.list[index];
+
+    forecastElement.innerHTML +=`
+      <div class="col col-formatting">
+        <ul>
+          <li>
+            ${formathours(forecast.dt * 1000)}
+          </li>
+          <li>
+            <img src = "http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" class="forecast-icons">
+          </li>
+          <li>
+          <span id="forecast-temp">${Math.round(forecast.main.temp)}</span><span id="temp-unit">ºC</span>
+          </li>
+        </ul>
+      </div>
+    `;
+  }
+}
+
+
 // call today's weather API
 function callWeatherApi(city) {
   let cityName = city;
@@ -90,6 +121,12 @@ function callWeatherApi(city) {
   let apiUrl = `${apiEndpoint}?q=${cityName}&units=${units}&appid=${apiKey}`;
   
   axios.get(apiUrl).then(displayTemp);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units=${units}&appid=${apiKey}`
+  
+  axios.get(apiUrl).then(displayForecast);
+
+
 }
 
 
@@ -108,10 +145,12 @@ function convertToFahrenheit(event) {
   let temperatureElement = document.querySelector("#temperature");
   let feelsLikeElement = document.querySelector("#feels_like")
   let tempUnit = document.querySelectorAll("#temp-unit");
+  let forecastTempElement = document.querySelectorAll("#forecast-temp");
   temperatureElement.innerHTML = Math.round((celsiusTemperature * 9/5) + 32);
   feelsLikeElement.innerHTML = Math.round((feelsLikeTemperature * 9/5) + 32);
 
-  for (let i=0; i<2; i++) {
+
+  for (let i=0; i<7; i++) {
   tempUnit[i].innerHTML = "ºF"
 }
   // add the active class to the Fahrenheit link
@@ -122,19 +161,24 @@ function convertToFahrenheit(event) {
   celsius.classList.remove("btn-secondary")
   celsius.classList.add("btn-outline-secondary")
 
+    for (let i=0; i<5; i++) {
+  forecastTempElement[i].innerHTML = Math.round((forecastTemperature[i].main.temp * 9/5) + 32);
+}
+
 };
 
 
 // Temperature - Fahrenheit to Celcsus
 function changeToCelsius (event) {
   event.preventDefault();
-  let temperature = document.querySelector("#temperature");
+  let temperatureElement = document.querySelector("#temperature");
   let feelsLikeElement = document.querySelector("#feels_like");
   let tempUnit = document.querySelectorAll("#temp-unit");
-  temperature.innerHTML = Math.round(celsiusTemperature);
+  let forecastTempElement = document.querySelectorAll("#forecast-temp");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
   feelsLikeElement.innerHTML = Math.round(feelsLikeTemperature);
 
-  for (let i=0; i<2; i++) {
+  for (let i=0; i<7; i++) {
   tempUnit[i].innerHTML = "ºC"
 }
 
@@ -146,11 +190,17 @@ function changeToCelsius (event) {
   celsius.classList.remove("btn-outline-secondary")
   celsius.classList.add("btn-secondary")
 
+  for (let i=0; i<5; i++) {
+  forecastTempElement[i].innerHTML = Math.round(forecastTemperature[i].main.temp);
+}
+
+
 }
 
 // Start
 let celsiusTemperature = null;
 let feelsLikeTemperature = null;
+let forecastTemperature = null;
 
 // call Weather API at the start
 callWeatherApi("London");
