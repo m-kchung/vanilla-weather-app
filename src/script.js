@@ -108,7 +108,9 @@ function updateCity(event) {
     let city = response.data.name;
     let country = response.data.sys.country;
     let icon = response.data.weather[0].icon;
-
+    let iconNumber = Math.round(icon.substring(0,2));
+    let background = document.querySelector(".weather-app")
+    console.log(iconNumber);
     celsiusTemperature= response.data.main.temp;
     feelsLikeTemperature = response.data.main.feels_like
 
@@ -120,13 +122,24 @@ function updateCity(event) {
     document.querySelector("#feels_like").innerHTML= Math.round(response.data.main.feels_like);
     document.querySelector("#weather-icon").setAttribute(
       "src",
-      `http://openweathermap.org/img/wn/${icon}@2x.png`
+      `images/${icon}.png`
       );
     document.querySelector("#weather-icon").setAttribute(
       "alt",
       response.data.weather[0].description
       )
-      document.querySelector("#current-time").innerHTML = formatDate(new Date());
+    document.querySelector("#current-time").innerHTML = formatDate(new Date());
+    if(iconNumber < 5) {
+      background.id ="clear-sky"
+    } if(iconNumber > 5 && iconNumber < 12) {
+      background.id ="rainy"
+    } if(iconNumber ===13 ) {
+      background.id ="snowy"
+    } if(iconNumber === 50) {
+      background.id ="misty"
+    }
+    console.log(iconNumber);
+    console.log(background.classList)
 
       latitude = response.data.coord.lat;
       longitude = response.data.coord.lon;
@@ -152,7 +165,7 @@ function updateCity(event) {
               ${formathours(forecast.dt * 1000)}
             </li>
             <li>
-              <img src = "http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" class="forecast-icons">
+              <img src = "images/${forecast.weather[0].icon}.png" class="forecast-icons">
             </li>
             <li>
             <span id="forecast-temp">${Math.round(forecast.main.temp)}</span><span id="temp-unit">ºC</span>
@@ -185,7 +198,7 @@ function updateCity(event) {
                 ${formatShortDays(forecastDailyTemp.dt *1000)}
               </li>
               <li>
-                <img src = "http://openweathermap.org/img/wn/${forecastDailyTemp.weather[0].icon}@2x.png" class="forecast-icons">
+                <img src = "images/${forecastDailyTemp.weather[0].icon}.png" class="forecast-icons">
               </li>
               <li>
               <span id="forecast-temp">${Math.round(forecastDailyTemp.temp.day)}</span><span id="temp-unit">ºC</span>
@@ -221,7 +234,7 @@ function updateCity(event) {
               ${formathours(forecastTempToday.dt * 1000)}
             </li>
             <li>
-              <img src = "http://openweathermap.org/img/wn/${forecastTempToday.weather[0].icon}@2x.png" class="forecast-icons">
+              <img src = "images/${forecastTempToday.weather[0].icon}.png" class="forecast-icons">
             </li>
             <li>
             <span id="forecast-temp">${Math.round(forecastTempToday.main.temp)}</span><span id="temp-unit">ºC</span>
@@ -254,11 +267,11 @@ function updateCity(event) {
       tempUnit[i].innerHTML = "ºF"
     }
     // add the active class to the Fahrenheit link
-    fahrenheit.classList.remove("btn-outline-secondary");
-    fahrenheit.classList.add("btn-secondary");
+    fahrenheit.classList.remove("not-active");
+    fahrenheit.classList.add("active-button");
 
-    celsius.classList.remove("btn-secondary")
-    celsius.classList.add("btn-outline-secondary")
+    celsius.classList.remove("active-button")
+    celsius.classList.add("not-active")
 
     // Change forecast based on which forecast toggle is active
     if(forecastToday.classList[0] ==="forecast-active") {
@@ -288,11 +301,11 @@ function updateCity(event) {
     }
 
     // remove the active class to the Fahrenheit link
-    fahrenheit.classList.remove("btn-secondary");
-    fahrenheit.classList.add("btn-outline-secondary");
+    fahrenheit.classList.remove("active-button");
+    fahrenheit.classList.add("not-active");
 
-    celsius.classList.remove("btn-outline-secondary")
-    celsius.classList.add("btn-secondary")
+    celsius.classList.remove("not-active")
+    celsius.classList.add("active-button")
 
     // Change forecast based on which forecast toggle is active
     if(forecastToday.classList[0] ==="forecast-active") {

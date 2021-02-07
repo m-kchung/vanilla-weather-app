@@ -13,7 +13,7 @@
     />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -24,90 +24,96 @@
     ></script>
   </head>
   <body>
-    <div class="weather-app">
-      <div class="search-section">
-        <span class="search-form">
-          <i class="fas fa-search search-icon"></i>
-          <form id="search-form">
-            <input
-              type="text"
-              placeholder="Enter a city"
-              autocomplete="off"
-              class="search-bar"
-              id="city-name"
-            />
-          </form>
-        </span>
-        <a href="#" class="location-icon" id="location-icon"
-          ><i class="fas fa-map-marker-alt"></i
-        ></a>
-      </div>
-      <!-- City information -->
-      <div class="row">
-        <div class="col-9">
-          <h1><span id="city-heading"></span></h1>
-          <h4><span id="current-time"></span></h4>
+    <div class="weather-app" id="weather-app">
+      <div class="weather-app-top">
+        <div class="search-section">
+          <span class="search-form">
+            <i class="fas fa-search search-icon"></i>
+            <form id="search-form">
+              <input
+                type="text"
+                placeholder="Enter a city"
+                autocomplete="off"
+                class="search-bar"
+                id="city-name"
+              />
+            </form>
+          </span>
+          <a href="#" class="location-icon" id="location-icon"
+            ><i class="fas fa-map-marker-alt"></i
+          ></a>
         </div>
-        <div class="col-3 unit-toggle">
-          <div class="btn-group">
+        <!-- City information -->
+        <div class="row">
+          <div class="col-9">
+            <h1><span id="city-heading"></span></h1>
+            <h4><span id="current-time"></span></h4>
+          </div>
+          <div class="col-3 unit-toggle">
+            <!-- <div class="btn-group"> -->
             <a
               href="#"
-              class="btn btn-secondary unit-button"
+              class="btn active-button unit-button"
               id="convert-to-celsius"
               >ºC</a
             >
             <a
               href="#"
-              class="btn btn-outline-secondary unit-button"
+              class="btn not-active unit-button"
               id="convert-to-fahrenheit"
               >ºF</a
             >
+            <!-- </div> -->
           </div>
         </div>
-      </div>
-      <!-- Today's Weather -->
-      <div class="weather-today">
-        <img src="" id="weather-icon" class="weather-icon" />
+        <!-- Today's Weather -->
+        <div class="weather-today">
+          <img src="" id="weather-icon" class="weather-icon" />
 
-        <h1><span id="temperature"></span><span id="temp-unit">ºC</span></h1>
-        <h3 class="weather-main"><span id="weather-main"></span></h3>
-      </div>
-      <!-- Today's weather detail -->
-      <div class="weather-details">
-        <div class="row weather-details-row">
-          <div class="col-4 col-formatting col-border">
-            <h5><span id="wind"></span>km/h</h5>
-            <p>Wind</p>
-          </div>
-          <div class="col-4 col-formatting col-border">
-            <h5><span id="humidity"></span>%</h5>
-            <p>Humidity</p>
-          </div>
-          <div class="col-4 col-formatting">
-            <h5><span id="feels_like"></span><span id="temp-unit">ºC</span></h5>
-            <p>Feels like</p>
+          <h1><span id="temperature"></span><span id="temp-unit">ºC</span></h1>
+          <h3 class="weather-main"><span id="weather-main"></span></h3>
+        </div>
+        <!-- Today's weather detail -->
+        <div class="weather-details">
+          <div class="row weather-details-row">
+            <div class="col-4 col-formatting col-border">
+              <h5><span id="wind"></span>km/h</h5>
+              <p>Wind</p>
+            </div>
+            <div class="col-4 col-formatting col-border">
+              <h5><span id="humidity"></span>%</h5>
+              <p>Humidity</p>
+            </div>
+            <div class="col-4 col-formatting">
+              <h5>
+                <span id="feels_like"></span><span id="temp-unit">ºC</span>
+              </h5>
+              <p>Feels like</p>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Forecast Section -->
-      <div class="forecast-section">
-        <h2>Forecast</h2>
-        <ul class="forecast-heading">
-          <li class="forecast-menu">
-            <a href="#" class="forecast-active" id="forecast-today">Today</a>
-          </li>
-          <li class="forecast-menu">
-            <a href="#" class="forecast-not-active" id="forecast-5days"
-              >Next 5 days</a
-            >
-          </li>
-        </ul>
+      <div class="weather-app-bottom">
+        <div class="forecast-section">
+          <ul class="forecast-heading">
+            <li class="forecast-menu">
+              <a href="#" class="forecast-active" id="forecast-today">Today</a>
+            </li>
+            <li class="forecast-menu">
+              <a href="#" class="forecast-not-active" id="forecast-5days"
+                >Next 5 days</a
+              >
+            </li>
+          </ul>
 
-        <div class="forecast">
-          <div class="row" id="forecast"></div>
+          <div class="forecast">
+            <div class="row" id="forecast"></div>
+          </div>
         </div>
       </div>
+
       <footer>
         <small>
           <a
