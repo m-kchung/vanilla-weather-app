@@ -66,6 +66,7 @@ li.forecast-menu {
   margin: 0;
 }
 /* sections */
+/* The weather app */
 .weather-app {
   max-width: 600px;
   margin: 30px auto;
@@ -74,54 +75,7 @@ li.forecast-menu {
   border-radius: 10px;
 }
 
-.forecast-section {
-  margin-top: 50px;
-}
-
-.weather-today {
-  text-align: center;
-  padding: 15px;
-}
-
-.weather-details {
-  text-align: center;
-  border: 1px solid #dadde1;
-  border-radius: 10px;
-  padding: 15px 0px;
-  margin: 5px 85px;
-}
-
-.forecast {
-  margin-top: 5px;
-  border: 1px solid #dadde1;
-  border-radius: 10px;
-  padding: 10px;
-}
-
-.col-border {
-  border-right: 1px solid #dadde1;
-}
-
-.col-formatting {
-  padding: 0px;
-}
-
-.unit-toggle {
-  text-align: right;
-}
-
-.weather-details-row {
-  margin: 0;
-}
-
-.unit-button:focus {
-  box-shadow: none;
-}
-
-.unit-button:active {
-  box-shadow: none;
-}
-
+/* Search section */
 .search-section {
   margin: 0 0 30px;
   text-align: center;
@@ -154,8 +108,63 @@ li.forecast-menu {
   color: #42444d;
 }
 
+/* Unit conversion Toggle */
+.unit-toggle {
+  text-align: right;
+}
+
+.unit-button:focus {
+  box-shadow: none;
+}
+
+.unit-button:active {
+  box-shadow: none;
+}
+
+/* Today's weather section */
+.weather-today {
+  text-align: center;
+  padding: 15px;
+}
+
+.weather-icon {
+  width: 120px;
+}
+
 .weather-main:first-letter {
   text-transform: capitalize;
+}
+
+.weather-details {
+  text-align: center;
+  border: 1px solid #dadde1;
+  border-radius: 10px;
+  padding: 15px 0px;
+  margin: 5px 85px;
+}
+
+.weather-details-row {
+  margin: 0;
+}
+
+.col-border {
+  border-right: 1px solid #dadde1;
+}
+
+.col-formatting {
+  padding: 0px;
+}
+
+/* Forecast */
+.forecast-section {
+  margin-top: 50px;
+}
+
+.forecast {
+  margin-top: 5px;
+  border: 1px solid #dadde1;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .forecast-active {
@@ -187,20 +196,6 @@ li.forecast-menu {
   background-color: #b4b5b9;
 }
 
-.location-button {
-  border: none;
-  background-color: white;
-  padding: 0;
-}
-
-.location-button:focus {
-  outline: none;
-}
-
 .forecast-icons {
   width: 70px;
-}
-
-.weather-icon {
-  width: 120px;
 }
