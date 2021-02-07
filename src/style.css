@@ -102,7 +102,7 @@ footer {
   box-shadow: none;
 }
 
-.unit-button:focus:active {
+.unit-button:active {
   box-shadow: none;
 }
 
@@ -186,4 +186,14 @@ li.forecast-menu {
 ul.forecast-heading {
   text-align: left;
   margin-bottom: 10px;
+}
+
+.location-button {
+  border: none;
+  background-color: white;
+  padding: 0;
+}
+
+.location-button:focus {
+  outline: none;
 }
