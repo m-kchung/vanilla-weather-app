@@ -141,8 +141,6 @@ function displayForecast (response) {
 // get the next 5 days of forecast
 function forecastDailyTemp (response) {
   forecastDaily = response.data.daily
-  console.log(forecastDaily)
-
 }
 
 // show next 5 days
@@ -171,10 +169,6 @@ forecastElement.innerHTML = ""
      `;
 }
   
-  
-
-
-
     // Remove the active class from the Today's button
   forecastToday.classList.remove("forecast-active");
   forecastToday.classList.add("forecast-not-active");
@@ -258,7 +252,6 @@ function convertToFahrenheit(event) {
   temperatureElement.innerHTML = Math.round((celsiusTemperature * 9/5) + 32);
   feelsLikeElement.innerHTML = Math.round((feelsLikeTemperature * 9/5) + 32);
 
-
   for (let i=0; i<7; i++) {
   tempUnit[i].innerHTML = "ºF"
 }
@@ -269,10 +262,16 @@ function convertToFahrenheit(event) {
   // remove the active class from the celsius link
   celsius.classList.remove("btn-secondary")
   celsius.classList.add("btn-outline-secondary")
-
+  console.log(forecastToday.classList[0])
+  if(forecastToday.classList[0] ==="forecast-active") {
     for (let i=0; i<5; i++) {
   forecastTempElement[i].innerHTML = Math.round((forecastTemperature[i].main.temp * 9/5) + 32);
-}
+    } 
+  } if(forecastToday.classList[0] ==="forecast-not-active") {
+    for (let i=0; i<5; i++) {
+  forecastTempElement[i].innerHTML = Math.round((forecastDaily[i+1].temp.day * 9/5) + 32);
+    } 
+  }
 
 };
 
@@ -299,9 +298,15 @@ function changeToCelsius (event) {
   celsius.classList.remove("btn-outline-secondary")
   celsius.classList.add("btn-secondary")
 
+  if(forecastToday.classList[0] ==="forecast-active") {
   for (let i=0; i<5; i++) {
   forecastTempElement[i].innerHTML = Math.round(forecastTemperature[i].main.temp);
 }
+  } if(forecastToday.classList[0] ==="forecast-not-active") {
+  for (let i=0; i<5; i++) {
+  forecastTempElement[i].innerHTML = Math.round(forecastDaily[i+1].temp.day);
+    } 
+  }
 
 
 }
