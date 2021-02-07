@@ -11,7 +11,7 @@ h1 {
 h2 {
   font-size: 30px;
   font-weight: 500;
-  margin: 0;
+  margin-bottom: 20px;
 }
 
 h3 {
@@ -36,6 +36,7 @@ p {
   font-size: 15px;
   margin: 0;
 }
+
 ul {
   list-style: none;
   padding: 0;
@@ -58,7 +59,7 @@ footer {
 }
 
 .forecast-section {
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 .weather-today {
@@ -143,4 +144,46 @@ form {
 
 .weather-main:first-letter {
   text-transform: capitalize;
+}
+
+li.forecast-menu {
+  display: inline;
+  padding: 0 10px 0 0;
+  color: #42444d;
+  border-radius: 13px;
+  margin: 0;
+}
+
+.forecast-active {
+  background-color: #42444d;
+  padding: 8px 20px;
+  border-radius: 13px;
+  color: white;
+  margin: 0;
+  text-decoration: none;
+}
+
+.forecast-active:hover {
+  text-decoration: none;
+  color: white;
+  cursor: default;
+}
+
+.forecast-not-active {
+  color: #42444d;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 8px 20px;
+  border-radius: 13px;
+}
+
+.forecast-not-active:hover {
+  text-decoration: none;
+  color: #42444d;
+  background-color: #b4b5b9;
+}
+
+ul.forecast-heading {
+  text-align: left;
+  margin-bottom: 10px;
 }
