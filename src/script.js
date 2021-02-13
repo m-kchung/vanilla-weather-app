@@ -112,7 +112,8 @@ function updateCity(event) {
     let background = document.querySelector(".weather-app")
     console.log(iconNumber);
     celsiusTemperature= response.data.main.temp;
-    feelsLikeTemperature = response.data.main.feels_like
+    feelsLikeTemperature = response.data.main.feels_like;
+    let tempUnit = document.querySelectorAll("#temp-unit");
 
     document.querySelector("#city-heading").innerHTML = `${city}, ${country}`;
     document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
@@ -138,8 +139,28 @@ function updateCity(event) {
     } if(iconNumber === 50) {
       background.id ="misty"
     }
-    console.log(iconNumber);
-    console.log(background.classList)
+
+    // Re-set forecast button
+    if (forecastToday.classList[0] === "forecast-not-active") {
+      forecastToday.classList.remove("forecast-not-active");
+      forecastToday.classList.add("forecast-active");
+  
+      forecast5Days.classList.remove("forecast-active")
+      forecast5Days.classList.add("forecast-not-active")
+    }
+
+    // re-set to celsius button
+    if (celsius.classList[2] === "not-active") {
+      fahrenheit.classList.remove("active-button");
+      fahrenheit.classList.add("not-active");
+
+      celsius.classList.remove("not-active")
+      celsius.classList.add("active-button")
+
+      for (let i=0; i<7; i++) {
+      tempUnit[i].innerHTML = "ºC"
+    }
+    }
 
       latitude = response.data.coord.lat;
       longitude = response.data.coord.lon;
