@@ -1,6 +1,6 @@
 body {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
-  background-color: rgb(233, 233, 233);
+  color: #5b5b5b;
 }
 
 h1 {
@@ -54,7 +54,6 @@ li {
 footer {
   margin-top: 0;
   text-align: center;
-  border-radius: 0 0 20px 20px;
 }
 
 form {
@@ -66,8 +65,7 @@ form {
 .weather-app {
   max-width: 600px;
   border-radius: 20px;
-  margin: 30px auto;
-  border-color: 1px solid grey;
+  margin: 30px auto 0;
 }
 
 .weather-app-top {
@@ -75,7 +73,7 @@ form {
 }
 
 .weather-app-bottom {
-  border-radius: 30px 30px 0 0;
+  border-radius: 20px;
 }
 
 /* Search section */
@@ -100,14 +98,14 @@ form {
 
 .location-icon {
   font-size: 24px;
-  color: white;
+  color: #929292;
   padding: 0 0 0 10px;
   vertical-align: middle;
   cursor: pointer;
 }
 
 .location-icon:hover {
-  color: #42444d;
+  color: #5b5b5b;
 }
 
 /* Unit conversion Toggle */
@@ -118,7 +116,7 @@ form {
 .unit-button {
   padding: 8px 13px;
   border-radius: 13px;
-  color: #42444d;
+  color: ##5b5b5b;
 }
 
 .unit-button:hover {
@@ -134,14 +132,18 @@ form {
 }
 
 .active-button {
-  background-color: #42444d;
+  background-color: #5b5b5b;
   color: white;
 }
 
 .active-button:hover {
   color: white;
   cursor: default;
-  background-color: #42444d;
+  background-color: #5b5b5b;
+}
+
+.not-active:hover {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 /* Today's weather section */
@@ -151,8 +153,7 @@ form {
 }
 
 .weather-icon {
-  width: 120px;
-  margin: 15px;
+  width: 150px;
 }
 
 .weather-main:first-letter {
@@ -164,7 +165,7 @@ form {
   border-radius: 15px;
   padding: 15px 0px;
   margin: 15px 13% 0;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .weather-details-row {
@@ -172,7 +173,7 @@ form {
 }
 
 .col-border {
-  border-right: 1px solid #dadde1;
+  border-right: 1px solid #5b5b5b;
 }
 
 .col-formatting {
@@ -188,6 +189,7 @@ form {
   margin-top: 15px;
   border-radius: 15px;
   padding: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 ul.forecast-heading {
@@ -198,13 +200,13 @@ ul.forecast-heading {
 li.forecast-menu {
   display: inline;
   padding: 0 10px 0 0;
-  color: #42444d;
+  color: #5b5b5b;
   border-radius: 13px;
   margin: 0;
 }
 
 .forecast-active {
-  background-color: #42444d;
+  background-color: #5b5b5b;
   padding: 8px 20px;
   border-radius: 13px;
   color: white;
@@ -230,33 +232,38 @@ li.forecast-menu {
 
 .forecast-not-active:hover {
   text-decoration: none;
-  color: #42444d;
+  color: #5b5b5b;
   background-color: #b4b5b9;
 }
 
 .forecast-icons {
-  width: 50px;
+  width: 60px;
   margin: 10px 0;
 }
 
 /* weather background */
 #clear-sky {
-  background-image: linear-gradient(300deg, #4facfe 0%, #00f2fe 100%);
+  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
 }
 
 #rainy {
-  background-image: linear-gradient(45deg, #8baaaa 0%, #ae8b9c 100%);
+  background-image: linear-gradient(
+    to top,
+    #bdc2e8 0%,
+    #bdc2e8 1%,
+    #e6dee9 100%
+  );
 }
 
 #snowy {
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+}
+
+#misty {
   background-image: linear-gradient(
     to top,
     #dad4ec 0%,
     #dad4ec 1%,
     #f3e7e9 100%
   );
-}
-
-#misty {
-  background-image: linear-gradient(to top, #6a85b6 0%, #bac8e0 100%);
 }
