@@ -233,7 +233,7 @@ li.forecast-menu {
 .forecast-not-active:hover {
   text-decoration: none;
   color: #5b5b5b;
-  background-color: #b4b5b9;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .forecast-icons {
@@ -243,20 +243,39 @@ li.forecast-menu {
 
 /* weather background */
 #clear-sky {
-  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  background-image: linear-gradient(
+    to top,
+    #fffaf5 0%,
+    #fff5eb 1%,
+    #8fdbff 100%
+  );
+}
+
+#cloudy {
+  background-image: linear-gradient(
+    to top,
+    #f5ecee 0%,
+    #f0dde1 1%,
+    #b0e6ff 100%
+  );
 }
 
 #rainy {
   background-image: linear-gradient(
     to top,
-    #bdc2e8 0%,
-    #bdc2e8 1%,
+    #d2d6f0 0%,
+    #d2d6f0 1%,
     #e6dee9 100%
   );
 }
 
 #snowy {
-  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+  background-image: linear-gradient(
+    to top,
+    #f2f6f8 0%,
+    #f2f6f8 1%,
+    #c2ddeb 100%
+  );
 }
 
 #misty {

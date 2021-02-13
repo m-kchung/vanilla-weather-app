@@ -110,7 +110,6 @@ function updateCity(event) {
     let icon = response.data.weather[0].icon;
     let iconNumber = Math.round(icon.substring(0,2));
     let background = document.querySelector(".weather-app")
-    console.log(iconNumber);
     celsiusTemperature= response.data.main.temp;
     feelsLikeTemperature = response.data.main.feels_like;
     let tempUnit = document.querySelectorAll("#temp-unit");
@@ -123,15 +122,17 @@ function updateCity(event) {
     document.querySelector("#feels_like").innerHTML= Math.round(response.data.main.feels_like);
     document.querySelector("#weather-icon").setAttribute(
       "src",
-      `images/${icon}.png`
+      `images/${iconNumber}.png`
       );
     document.querySelector("#weather-icon").setAttribute(
       "alt",
       response.data.weather[0].description
       )
     document.querySelector("#current-time").innerHTML = formatDate(new Date());
-    if(iconNumber < 5) {
+    if(iconNumber <= 2) {
       background.id ="clear-sky"
+    } if(iconNumber >= 3 && iconNumber < 5) {
+      background.id ="cloudy"
     } if(iconNumber > 5 && iconNumber < 12) {
       background.id ="rainy"
     } if(iconNumber ===13 ) {
@@ -186,7 +187,7 @@ function updateCity(event) {
               ${formathours(forecast.dt * 1000)}
             </li>
             <li>
-              <img src = "images/${forecast.weather[0].icon}.png" class="forecast-icons">
+              <img src = "images/${Math.round(forecast.weather[0].icon.substring(0,2))}.png" class="forecast-icons">
             </li>
             <li>
             <span id="forecast-temp">${Math.round(forecast.main.temp)}</span><span id="temp-unit">ºC</span>
@@ -219,7 +220,7 @@ function updateCity(event) {
                 ${formatShortDays(forecastDailyTemp.dt *1000)}
               </li>
               <li>
-                <img src = "images/${forecastDailyTemp.weather[0].icon}.png" class="forecast-icons">
+                <img src = "images/${Math.round(forecastDailyTemp.weather[0].icon.substring(0,2))}.png" class="forecast-icons">
               </li>
               <li>
               <span id="forecast-temp">${Math.round(forecastDailyTemp.temp.day)}</span><span id="temp-unit">ºC</span>
@@ -255,7 +256,7 @@ function updateCity(event) {
               ${formathours(forecastTempToday.dt * 1000)}
             </li>
             <li>
-              <img src = "images/${forecastTempToday.weather[0].icon}.png" class="forecast-icons">
+              <img src = "images/${Math.round(forecastTempToday.weather[0].icon.substring(0,2))}.png" class="forecast-icons">
             </li>
             <li>
             <span id="forecast-temp">${Math.round(forecastTempToday.main.temp)}</span><span id="temp-unit">ºC</span>
