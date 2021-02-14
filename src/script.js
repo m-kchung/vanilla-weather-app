@@ -62,11 +62,14 @@
   function showPosition(response) {
     latitude = response.coords.latitude
     longitude = response.coords.longitude
-    
+
     let units = "metric";
     let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
     let apiUrl = `${apiEndpoint}?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(displayTemp);
+
+    apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`
+    axios.get(apiUrl).then(displayForecast);
   }
 
 // Call Weather APIs
@@ -89,7 +92,6 @@
   axios.get(apiUrl).then(displayTemp);
 
   apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units=${units}&appid=${apiKey}`
-  
   axios.get(apiUrl).then(displayForecast);
 }
 
